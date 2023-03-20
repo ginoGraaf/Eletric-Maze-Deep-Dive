@@ -6,13 +6,13 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
-    borderMipMap: 0
+    borderMipMap: 1
     mipMapsPreserveCoverage: 0
-    alphaTestReferenceValue: 0.5
+    alphaTestReferenceValue: 0
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -36,9 +36,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -50,7 +50,7 @@ TextureImporter:
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 1
+  alphaUsage: 0
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 8
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_1
+      name: WE
       rect:
         serializedVersion: 2
         x: 33
@@ -159,7 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_2
+      name: NS
       rect:
         serializedVersion: 2
         x: 66
@@ -180,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_3
+      name: S
       rect:
         serializedVersion: 2
         x: 99
@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_4
+      name: N
       rect:
         serializedVersion: 2
         x: 0
@@ -222,7 +222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_5
+      name: W
       rect:
         serializedVersion: 2
         x: 33
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_6
+      name: E
       rect:
         serializedVersion: 2
         x: 66
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_7
+      name: SE
       rect:
         serializedVersion: 2
         x: 99
@@ -285,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_8
+      name: NE
       rect:
         serializedVersion: 2
         x: 0
@@ -306,7 +306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_9
+      name: NW
       rect:
         serializedVersion: 2
         x: 33
@@ -327,7 +327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_10
+      name: WS
       rect:
         serializedVersion: 2
         x: 66
@@ -348,7 +348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_11
+      name: WSE
       rect:
         serializedVersion: 2
         x: 99
@@ -369,7 +369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_12
+      name: NSE
       rect:
         serializedVersion: 2
         x: 0
@@ -390,7 +390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_13
+      name: NWS
       rect:
         serializedVersion: 2
         x: 33
@@ -411,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MazeSprite_14
+      name: NWSE
       rect:
         serializedVersion: 2
         x: 66
@@ -431,6 +431,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: NWE
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2516bb029fc216b49ba33f8c8287400a
+      internalID: 950996254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -442,21 +463,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MazeSprite_4: -1529534599
-      MazeSprite_10: 1824830826
-      MazeSprite_8: 1308718870
-      MazeSprite_2: 1221363727
-      MazeSprite_6: -703684744
-      MazeSprite_14: 311229540
-      MazeSprite_5: -342272046
-      MazeSprite_12: 769080640
-      MazeSprite_9: 2026460990
+      W: -342272046
+      NSE: 769080640
+      NE: 1308718870
+      NWE: 950996254
+      WSE: 582346569
+      S: 669057992
+      E: -703684744
+      NW: 2026460990
       MazeSprite_0: 375263030
-      MazeSprite_11: 582346569
-      MazeSprite_1: 846286413
-      MazeSprite_3: 669057992
-      MazeSprite_13: 1095083948
-      MazeSprite_7: 911410880
+      SE: 911410880
+      NS: 1221363727
+      NWSE: 311229540
+      WE: 846286413
+      N: -1529534599
+      WS: 1824830826
+      NWS: 1095083948
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

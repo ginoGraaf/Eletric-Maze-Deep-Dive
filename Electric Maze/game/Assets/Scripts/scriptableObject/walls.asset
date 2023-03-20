@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c14159146a6ee4984b3b2cd1fd3fc5, type: 3}
+  m_Name: walls
+  m_EditorClassIdentifier: 
+  spriteObject:
+  - spriteName: 
+    sprite: {fileID: 375263030, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: N
+    sprite: {fileID: -1529534599, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: NS
+    sprite: {fileID: 1221363727, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: NE
+    sprite: {fileID: 1308718870, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: NW
+    sprite: {fileID: 2026460990, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: NSE
+    sprite: {fileID: 769080640, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: NWS
+    sprite: {fileID: 1095083948, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: E
+    sprite: {fileID: -703684744, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: S
+    sprite: {fileID: 669057992, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: SE
+    sprite: {fileID: 911410880, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: W
+    sprite: {fileID: -342272046, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: WS
+    sprite: {fileID: 1824830826, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: WE
+    sprite: {fileID: 846286413, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: NWSE
+    sprite: {fileID: 311229540, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: WSE
+    sprite: {fileID: 582346569, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
+  - spriteName: NWE
+    sprite: {fileID: 950996254, guid: 575917d31ff9cda43b4f347a131de685, type: 3}
