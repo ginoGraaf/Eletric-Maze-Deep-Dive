@@ -80,7 +80,7 @@ public class GrowingTree : MonoBehaviour
                 CurrentNodeList.RemoveAt(CurrentNodeList.Count - 1);
             }
             nodeGrid.SetGraphic();
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.01f);
         }
         if (CallPathfinding != null)
         {

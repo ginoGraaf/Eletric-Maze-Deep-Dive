@@ -13,15 +13,23 @@ public class NodeGridSystem : MonoBehaviour
     [SerializeField] private Transform MazeNodePrefab;
     [SerializeField] private GrowingTree growingTree;
     [SerializeField] private Pathfinding pathfinding;
+    [SerializeField] private NerveSpiralPath nerveSpiralPath;
 
     [SerializeField] private SpriteObject sprites;
+    [SerializeField] private PathfindingNodes pathfindingNodes;
+
+    public int Width { get => width; set => width = value; }
+    public int Height { get => height; set => height = value; }
+
     // Start is called before the first frame update
-  
+
 
 
     void Start()
     {
-        grid = new Grid<NodeGridObject>(width, height, gridSize, Vector3.zero, (Grid < NodeGridObject > g, int x, int y) => new NodeGridObject( g, x, y,sprites));
+        grid = new Grid<NodeGridObject>(Width, Height, gridSize, Vector3.zero, (Grid < NodeGridObject > g, int x, int y) => new NodeGridObject( g, x, y,sprites));
+        pathfindingNodes.SetUpPathfinding(Width, Height, gridSize);
+        nerveSpiralPath.SetUpGrid(width, height, gridSize);
         SetMaze();
         DoMazeRound();
     }
@@ -57,17 +65,26 @@ public class NodeGridSystem : MonoBehaviour
 
     private void DoMazeRound()
     {
-        Vector2Int pos = new Vector2Int(Random.Range(0, width), Random.Range(0, height));
+        Vector2Int pos = new Vector2Int(Random.Range(0, Width), Random.Range(0, Height));
         NodeGridObject nodeGridObject = grid.GetGridObject(pos.x, pos.y);
         growingTree.StartGrowingTreeAlgortime(nodeGridObject, grid,this);
    
     }
-    public NodeGridObject GiveRandomNode()
+    public NodeGridObject GiveRandomNode(int startX,int startY,int endX,int endY)
     {
-        Vector2Int pos = new Vector2Int(Random.Range(0, width), Random.Range(0, height));
+
+        Vector2Int pos = new Vector2Int(Random.Range(startX, endX), Random.Range(startY, endY));
         return grid.GetGridObject(pos.x, pos.y);
     }
 
+    public NodeGridObject GetNodeGrid(int x, int y)
+    {
+        if(grid.GetGridObject(x,y)!=null)
+        {
+            return grid.GetGridObject(x, y);
+        }
+        return null;
+    }
 
     public class NodeGridObject
     {
@@ -85,7 +102,7 @@ public class NodeGridSystem : MonoBehaviour
         private int YMazeCoord;
         private Grid<NodeGridObject> grid;
         private Transform transformObject;
-        private bool openTile=true;
+
         public enum TileChecked { NotChecked,Current,Checked,StartPoint,EndPoint};
         private TileChecked tileChecked;
         private string tileOpenConer = "";

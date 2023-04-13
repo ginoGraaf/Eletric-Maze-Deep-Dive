@@ -175,7 +175,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 30
+  field of view: 46
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.83, y: 4.74, z: -23.1}
+  m_LocalPosition: {x: 5.45, y: 4.74, z: -23.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -334,7 +334,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
@@ -356,6 +356,61 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &503446630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503446631}
+  - component: {fileID: 503446632}
+  m_Layer: 0
+  m_Name: NervespiralPath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &503446631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503446630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 906348299}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &503446632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503446630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff47bd8c5a3dfa48a271d9f45e52bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeGridSystem: {fileID: 906348298}
+  nervePrefab: {fileID: 8740763479612826513, guid: d89724b16091e004a9983535e1fc1b90,
+    type: 3}
+  crossingPrefabsRD: {fileID: 6779773854953390835, guid: 7f04aa249d3d82f4c8383bfa86a9287c,
+    type: 3}
+  crossingPrefabsLD: {fileID: 3526335071767698750, guid: 872807bc5a3ee60458446af0d73da6e3,
+    type: 3}
+  crossingPrefabsRU: {fileID: 3510651045329130135, guid: 342ab8865a467ab46aa573c3bbf39bb3,
+    type: 3}
+  crossingPrefabsLU: {fileID: 2235135666021208328, guid: 662709c00d5ab78458c263b43b5981b3,
+    type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +458,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906348297
 GameObject:
@@ -435,13 +490,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSize: 1
-  width: 16
-  height: 16
+  width: 15
+  height: 10
   MazeNodePrefab: {fileID: 6269835328672622570, guid: 03024f60064d9f549a51073f7be9f819,
     type: 3}
   growingTree: {fileID: 2083580284}
   pathfinding: {fileID: 2123717634}
+  nerveSpiralPath: {fileID: 503446632}
   sprites: {fileID: 11400000, guid: 885c3f340d56cfa4681ea3305262324d, type: 2}
+  pathfindingNodes: {fileID: 2123717635}
 --- !u!4 &906348299
 Transform:
   m_ObjectHideFlags: 0
@@ -456,9 +513,84 @@ Transform:
   m_Children:
   - {fileID: 2083580285}
   - {fileID: 2123717633}
+  - {fileID: 503446631}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1786579465
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3268256
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.09553423
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9780921
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_Name
+      value: Handel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8c878d5fd2d2284c9f0ab2ce258fffb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8c878d5fd2d2284c9f0ab2ce258fffb, type: 3}
 --- !u!1 &2083580283
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2123717633}
   - component: {fileID: 2123717634}
+  - component: {fileID: 2123717635}
   m_Layer: 0
   m_Name: PathFinding
   m_TagString: Untagged
@@ -548,3 +681,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeGridSystem: {fileID: 906348298}
+  PathfindingNodes: {fileID: 2123717635}
+  nerveSpiralPath: {fileID: 503446632}
+--- !u!114 &2123717635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123717632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436199fde37c8cb43a564fc28fe53187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
