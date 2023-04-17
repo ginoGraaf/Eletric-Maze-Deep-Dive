@@ -9,9 +9,12 @@ public class NerveSpiralPath : MonoBehaviour
     [SerializeField] private GameObject crossingPrefabsRD, crossingPrefabsLD, crossingPrefabsRU, crossingPrefabsLU;
     private List<PathfindingNodes.PathNodeObject> path = new List<PathfindingNodes.PathNodeObject>();
     private Grid<NerveSpiralObject> grid;
+
+    float gridSize;
     public void SetUpGrid(int width, int height, float gridSize)
     {
-        grid = new Grid<NerveSpiralObject>(width, height, gridSize, Vector3.zero, (Grid<NerveSpiralObject> g, int x, int y) => new NerveSpiralObject(g, x, y));
+        this.gridSize = gridSize;
+        grid = new Grid<NerveSpiralObject>(width, height, 3f, Vector3.zero, (Grid<NerveSpiralObject> g, int x, int y) => new NerveSpiralObject(g, x, y));
     }
 
     public void PlaceGameObject(List<PathfindingNodes.PathNodeObject> nodes)
@@ -25,7 +28,8 @@ public class NerveSpiralPath : MonoBehaviour
             int x = path[i].GetX();
             int y = path[i].GetY();
             GameObject nerveObject = Instantiate(nervePrefab);
-            nerveObject.transform.position = new Vector3(x, y, 0);
+         
+            nerveObject.transform.position = new Vector3(x* gridSize, y* gridSize, 0);
             grid.GetGridObject(x, y).SetGameObject(nerveObject);
         }
         Correcting();
@@ -120,28 +124,28 @@ public class NerveSpiralPath : MonoBehaviour
         {
             spiral.DeleteGaeObject();
             GameObject nerveObject = Instantiate(crossingPrefabsRD);
-            nerveObject.transform.position = new Vector3(spiral.X, spiral.Y, 0);
+            nerveObject.transform.position = new Vector3(spiral.X* gridSize, spiral.Y* gridSize, 0);
             grid.GetGridObject(spiral.X, spiral.Y).SetGameObject(nerveObject);
         }
         else if (north && west)
         {
             spiral.DeleteGaeObject();
             GameObject nerveObject = Instantiate(crossingPrefabsLD);
-            nerveObject.transform.position = new Vector3(spiral.X, spiral.Y, 0);
+            nerveObject.transform.position = new Vector3(spiral.X * gridSize, spiral.Y * gridSize, 0);
             grid.GetGridObject(spiral.X, spiral.Y).SetGameObject(nerveObject);
         }
         else if (south && east)
         {
             spiral.DeleteGaeObject();
             GameObject nerveObject = Instantiate(crossingPrefabsRU);
-            nerveObject.transform.position = new Vector3(spiral.X, spiral.Y, 0);
+            nerveObject.transform.position = new Vector3(spiral.X * gridSize, spiral.Y * gridSize, 0);
             grid.GetGridObject(spiral.X, spiral.Y).SetGameObject(nerveObject);
         }
         else if (south && west)
         {
             spiral.DeleteGaeObject();
             GameObject nerveObject = Instantiate(crossingPrefabsLU);
-            nerveObject.transform.position = new Vector3(spiral.X, spiral.Y, 0);
+            nerveObject.transform.position = new Vector3(spiral.X * gridSize, spiral.Y * gridSize, 0);
             grid.GetGridObject(spiral.X, spiral.Y).SetGameObject(nerveObject);
         }
     }
