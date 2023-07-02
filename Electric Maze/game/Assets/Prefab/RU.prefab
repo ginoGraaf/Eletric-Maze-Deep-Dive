@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2261203196267142727}
   m_Layer: 0
   m_Name: Cylinder (2)
-  m_TagString: Untagged
+  m_TagString: PipeHit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141499790084292695}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2e88cb6a584042741a41dd7efed5eef1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 278250180541232649}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: PipeHit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,8 +125,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3554375518264898741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.257, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.5, z: 0.3}
+  m_LocalPosition: {x: 0, y: -0.3057, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.45135504, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3964553717411945575}
@@ -189,7 +189,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3554375518264898741}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2e88cb6a584042741a41dd7efed5eef1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001

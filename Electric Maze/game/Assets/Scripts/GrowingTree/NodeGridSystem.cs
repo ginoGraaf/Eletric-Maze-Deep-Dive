@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static NodeGridSystem;
 
 public class NodeGridSystem : MonoBehaviour
@@ -32,6 +33,14 @@ public class NodeGridSystem : MonoBehaviour
         nerveSpiralPath.SetUpGrid(width, height, gridSize);
         SetMaze();
         DoMazeRound();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 
     private void SetMaze()
@@ -121,11 +130,13 @@ public class NodeGridSystem : MonoBehaviour
         public bool East { get => east; set => east = value; }
         public bool West { get => west; set => west = value; }
 
+        public bool visableTiles = false;
         public NodeGridObject(Grid<NodeGridObject> grid, int x, int y, SpriteObject spritesObjects)
         {
             this.X = x;
             this.Y = y;
             this.grid = grid;
+            
 
 
 
@@ -139,6 +150,7 @@ public class NodeGridSystem : MonoBehaviour
         public void SetNode(Transform transformObject)
         {
             this.transformObject = transformObject;
+            this.transformObject.gameObject.SetActive(visableTiles);
             grid.TriggerGridObjectChange(X, Y);
             render = transformObject.GetComponent<SpriteRenderer>();
         }

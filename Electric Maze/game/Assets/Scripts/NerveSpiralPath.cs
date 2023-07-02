@@ -59,23 +59,14 @@ public class NerveSpiralPath : MonoBehaviour
 
     private void CorrectLastPart(NerveSpiralObject spiral)
     {
+        PathfindingNodes.PathNodeObject pathA = path[1];
+        PathfindingNodes.PathNodeObject pathB = path[path.Count-2];
+        if (spiral.X!=pathA.GetX() && spiral.Y == pathA.GetY() || spiral.X != pathB.GetX() && spiral.Y == pathB.GetY())
+            {
+                spiral.GetspiralObject().transform.eulerAngles = new Vector3(0, 0, 90);
+                return;
+            }
        
-        NerveSpiralObject E = grid.GetGridObject(spiral.X + 1, spiral.Y);
-        NerveSpiralObject W = grid.GetGridObject(spiral.X - 1, spiral.Y);
-        if (E != null)
-        {
-            if (E.GetspiralObject() != null)
-            {
-                spiral.GetspiralObject().transform.eulerAngles = new Vector3(0, 0, 90);
-            }
-        }
-        if (W != null)
-        {
-            if (W.GetspiralObject() != null)
-            {
-                spiral.GetspiralObject().transform.eulerAngles = new Vector3(0, 0, 90);
-            }
-        }
 
     }
 
